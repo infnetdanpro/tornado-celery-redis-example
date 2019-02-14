@@ -1,12 +1,11 @@
 import tornado.ioloop
 import tornado.web
 import redis
-from tasks import results, prior
+from tasks import main
 
 class RedisHandler(tornado.web.RequestHandler):    
     def get(self):
-        results.delay(4, 4)
-        prior.delay(10, 10)
+        main.delay(1)
         self.write('added delays')
 
 def make_app():
