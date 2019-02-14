@@ -17,3 +17,12 @@ docker pull redis
 ```bash
 docker run -d --name dev-redis -p 6379:6379 -t -v redis
 ```
+
+RUN:
+
+```bash
+celery -A tasks worker --loglevel=info
+```
+```bash
+run tornado app
+```
